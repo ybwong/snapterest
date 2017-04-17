@@ -20,6 +20,7 @@ npm install --save-dev browserify
 npm install --save-dev gulp
 npm install --save-dev babelify
 npm install --save-dev vinyl-source-stream
+npm install --save-dev jest-cli
 
 vi gulpfile
 
@@ -36,3 +37,4 @@ gulp.task('default', function() {
 });
 
 https://facebook.github.io/react/docs/ multiple-components.html#dynamic-children.
+npm test
