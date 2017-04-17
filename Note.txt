@@ -1,0 +1,38 @@
+git clone git@github.com:Snapkite/snapkite-engine.git
+npm install --global node-gyp
+cd snapkite-engine
+npm install
+cd filters
+git clone git@github.com:Snapkite/snapkite-filter-is-possibly-sensitive.git
+git clone git@github.com:Snapkite/snapkite-filter-has-mobile-photo.git
+git clone git@github.com:Snapkite/snapkite-filter-is-retweet.git
+git clone git@github.com:Snapkite/snapkite-filter-has-text.git
+
+cd ~/snaptester
+mkdir source
+mkdir build
+cd source
+mkdir components
+touch app.js
+cd ~/snaptester
+npm init
+npm install --save-dev browserify
+npm install --save-dev gulp
+npm install --save-dev babelify
+npm install --save-dev vinyl-source-stream
+
+vi gulpfile
+
+var gulp = require('gulp');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+gulp.task('default', function() {
+    return browserify('./source/app.js')
+        .transform(babelify)
+        .bundle()
+        .pipe(source('snapterest.js'))
+        .pipe(gulp.dest('./build/'));
+});
+
+https://facebook.github.io/react/docs/ multiple-components.html#dynamic-children.
