@@ -89,9 +89,9 @@ var StreamTweet = React.createClass({
         console.log("[Snapterest] StreamTweet: Running der()");
         return (
             <section>
-                <HeaderText />
+                <Header text={this.state.headerText} />
                 <Tweet
-                    tweet={thtweet}
+                    tweet={this.props.tweet}
                     onImageClick={this.props.onAddTweetToCollection}
                 />
             </section>
