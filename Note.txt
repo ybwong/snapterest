@@ -21,6 +21,9 @@ npm install --save-dev gulp
 npm install --save-dev babelify
 npm install --save-dev vinyl-source-stream
 npm install --save-dev jest-cli
+npm install --save flux@2.1.1
+npm install --save object-assign
+
 
 vi gulpfile
 
@@ -38,3 +41,8 @@ gulp.task('default', function() {
 
 https://facebook.github.io/react/docs/ multiple-components.html#dynamic-children.
 npm test
+
+cd ~/snapkite-engine
+npm start
+cd ~/snapterest
+gulp

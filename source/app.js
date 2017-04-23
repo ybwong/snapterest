@@ -87,5 +87,8 @@ var ReactDOM = require('react-dom');
 // Chapter 4
 var Application = require('./components/Application.react');
 
-ReactDOM.render(<Application />, document.getElementById('react-application'));
+// Chapter 10
+var WebAPIUtils = require('./utils/WebAPIUtils');
+WebAPIUtils.initializeStreamOfTweets();
 
+// ReactDOM.render( < Application / > , document.getElementById('react-application'));
