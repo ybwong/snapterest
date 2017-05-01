@@ -1,30 +1,30 @@
-var React = require("react");
-var Stream = require("./Stream.react");
-var Collection = require("./Collection.react");
+var React = require("react")
+var Stream = require("./Stream.react")
+var Collection = require("./Collection.react")
 var Application = React.createClass({
   getInitialState: function() {
     return {
       collectionTweets: {}
-    };
+    }
   },
   addTweetToCollection: function(tweet) {
-    var collectionTweets = this.state.collectionTweets;
-    collectionTweets[tweet.id] = tweet;
+    var collectionTweets = this.state.collectionTweets
+    collectionTweets[tweet.id] = tweet
     this.setState({
       collectionTweets: collectionTweets
-    });
+    })
   },
   removeTweetFromCollection: function(tweet) {
-    var collectionTweets = this.state.collectionTweets;
-    delete collectionTweets[tweet.id];
+    var collectionTweets = this.state.collectionTweets
+    delete collectionTweets[tweet.id]
     this.setState({
       collectionTweets: collectionTweets
-    });
+    })
   },
   removeAllTweetsFromCollection: function() {
     this.setState({
       collectionTweets: {}
-    });
+    })
   },
   render: function() {
     return (
@@ -44,7 +44,7 @@ var Application = React.createClass({
           </div>
         </div>
       </div>
-    );
+    )
   }
-});
-module.exports = Application;
+})
+module.exports = Application

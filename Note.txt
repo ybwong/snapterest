@@ -33,7 +33,7 @@ var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 gulp.task('default', function() {
     return browserify('./source/app.js')
-        .transform(babelify)
+        .transform(babelify, { presets: ["react"] })
         .bundle()
         .pipe(source('snapterest.js'))
         .pipe(gulp.dest('./build/'));
@@ -46,3 +46,17 @@ cd ~/snapkite-engine
 npm start
 cd ~/snapterest
 gulp
+
+format jsx:
+===========
+
+You can install a JsPrettier package for Sublime 2 & 3. It's a fairly new JavaScript formatter (at the time of writing this: Feb-2017). It supports most of the latest developments like: ES2017, JSX, and Flow.
+
+Quickstart
+
+Install prettier globally using terminal: $ npm install -g prettier
+In Sublime go to Tools -> Command Palette... -> Package Control: Install Package, type the word JsPrettier, then select it to complete the installation.
+Format your file using context menu inside the editor or bind it to a keyboard shortcut: { "keys": ["super+b"], "command": "js_prettier" }
+
+https://github.com/jonlabelle/SublimeJsPrettier
+https://github.com/jlongster/prettier
